@@ -17,6 +17,7 @@ function mostrar()
 	formaDePago = prompt("Cual es su forma de pago");
 	precio = parseInt(precio);
 
+	descuento = 100;
 	
 	switch (true) {
 		case "tarjetaVisa":
@@ -25,6 +26,11 @@ function mostrar()
 		break;
 		case "paypal":
 		descuento = precio * 15 / 100;
+		switch (true)
+		{
+		case "todoIncluido":
+		descuento = precio * 25 / 100;
+		break;
 		break;
 		case "efectivo":
 		descuento = precio * 20 / 100;
