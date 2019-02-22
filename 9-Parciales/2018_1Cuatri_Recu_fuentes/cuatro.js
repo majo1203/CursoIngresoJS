@@ -4,51 +4,63 @@ function mostrar()
 	var precioDos;
 	var precioTres;
 	var precioCuatro;
-	var percioMayor;
 	var mensaje;
 	var descuento;
-	var resultado;
-	var resultadoFinal;
+	var total;
+	var totalDescuento;
+	var totalDescuentoDos;
 
-	precioUno = prompt("Ingrese el primer monto");
-	precioDos = prompt("Ingrese el segundo monto");
-	precioTres = prompt("Ingrese el tercer monto");
-	precioCuatro = prompt("Ingrese el cuarto monto");
+	precioUno=prompt("Ingrese el primer precio");
+	precioDos=prompt("Ingrese el segundo precio");
+	precioTres=prompt("Ingrese el tercer precio");
+	precioCuatro=prompt("Ingrese el cuarto precio");
 
-	var precioUno = parseInt(precioUno);
-	var precioDos = parseInt(precioDos);
-	var precioTres = parseInt(precioTres);
-	var precioCuatro = parseInt(precioCuatro);
+	
+	total=parseInt(precioUno)+parseInt(precioDos)+parseInt(precioTres)+parseInt(precioCuatro);
+	descuento=parseInt(descuento);
+	descuento=100;
 
-	descuento = 100;
-	resultado=precioUno+precioDos+precioTres+precioCuatro;
-
-		if (resultado > 100) {
-		descuento = 90;
-		} else {
-		if (resultado < 50) {
-			descuento = 115;
-	} else {
-		descuento = 95;
-	}
-    }
-
-		resultadoFinal = resultado * descuento / 100;
-
-
-	if (precioUno > precioDos && precioUno > precioCuatro && precioUno > precioTres) 
+	if (total > 100) 
 	{
-		mensaje = ("El precio mas alto es " + precioUno + " su total es " + resultadoFinal);
-	} else {if (precioDos > precioTres && precioDos > precioCuatro) 
-		{
-		mensaje = ("El precio mas alto es " + precioDos + " su total es " + resultadoFinal);
-	}else{ if (precioTres > precioCuatro) {
-		mensaje = ("El precio mas alto es " + precioTres + " su total es " + resultadoFinal);
-	} else{ if (precioCuatro > precioTres && precioUno > precioDos) {
-		mensaje = ("El precio mas alto es " + precioCuatro + " su total es " + resultadoFinal);
+		descuento = 90;
 	}
-} 
+	else
+		{
+			if (total < 50) 
+			{
+				descuento = 95;
+			}
+			else
+				{
+					descuento = 115;
+				}
+		}
 
 
-	alert(mensaje);
+		totalDescuento = (total) * (descuento) / 100;
+
+	if (precioUno > precioDos && precioUno > precioTres && precioUno > precioCuatro) 
+	{
+		mensaje = "El precio mayor es " + precioUno + " y con el descuento sería " + totalDescuento;
+	}else
+		{
+			if (precioDos > precioUno && precioDos > precioTres && precioDos > precioCuatro) 
+			{
+				mensaje = "El precio mayor es " + precioDos + " y con el descuento sería " + totalDescuento;
+			}else
+				{
+					if (precioTres > precioCuatro && precioUno && precioDos) 
+					{
+						mensaje = "El precio mayor es " + precioTres + " y con el descuento sería " + totalDescuento;
+					}else
+					{
+						if (precioCuatro > precioTres && precioUno && precioDos) 
+						{
+							mensaje = "El precio mayor es " + precioCuatro + " y con el descuento sería " + totalDescuento;
+						}
+					}
+				}
+		}
+
+		alert(mensaje);
 }
