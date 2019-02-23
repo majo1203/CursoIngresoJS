@@ -1,17 +1,23 @@
 function mostrar()
 {
 
-	var contador=0;
 	var acumulador=0;
+	var contador=0;
+	var numero;
 
-	while(contador<10)
+	contador=0;
+	acumulador=0;
+
+	while(contador<5)
 	{
-		contador = contador + 1;
+		contador=contador+1;
+		numero=prompt("Ingrese el numero" + contador + "#");
+		numero=parseInt(numero);
+		acumulador=acumulador+ numero;
 	}
-
-
+	
 
 document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/5;
+document.getElementById('promedio').value=acumulador/contador;
 
 }//FIN DE LA FUNCIÓN
