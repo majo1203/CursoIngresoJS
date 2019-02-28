@@ -11,14 +11,15 @@ function mostrar()
 	contador=0;
 	acumulador=0;
 
+	
+	while (nota >= 0 && nota <= 10) 
+		{
+			contador= contador+1;
+			nota=prompt("Ingrese su nota entre 0 y 10");
+			nota=parseInt(nota);
 
-	while(acumulador<5)
-	{
-		contador=contador+1;
-		nota = prompt ("Igrese su nota entre 0 y 10");
-		nota = parseInt(nota);
+		}
 
-	}
 
 
 
